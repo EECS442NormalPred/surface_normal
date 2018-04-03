@@ -8,7 +8,7 @@ function loadData(file_name, config)
 
 	    -- define data here, will be used in BatchIterator
 	    -- data.input_file  = line .. '_mlt.png'
-      data.input_file  = line .. '.png'
+      data.input_file  = line .. '_color.png'
 	    data.input_valid = line .. '_valid.png'
 	    data.output_file = line .. '_norm_camera.png'
 	    data.name       = line
