@@ -21,7 +21,7 @@ function config.parse(arg)
 
     -- data loader
     cmd:option('-train_file', '', 'train file, compulsory');
-    cmd:option('-test_file',  './image/test_list.txt', 'test file, compulsory');
+    cmd:option('-test_file',  './image/color_double_names.txt', 'test file, compulsory');
 	
     -- training and testing
     cmd:option('-gpuid', 1, 'gpu id')
