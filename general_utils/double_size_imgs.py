@@ -26,7 +26,3 @@ if __name__ == '__main__':
         print("ERROR: need to pass the images directory and destination")
 
     main(sys.argv[1], sys.argv[2])
-
-    # #### TEMP
-    # for i in range(20000):
-    #     print('./image/{}'.format(i))
