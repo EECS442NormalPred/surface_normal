@@ -14,8 +14,16 @@ def main(imsdir, imdestination):
                 continue
 
             with Image.open(imdir) as image:
+                imcategory = dirpath.split('/')[-1]
+		if imcategory == 'color':
+                    filename = filename[:-4] + '_color.png'
+                elif imcategory == 'mask':
+                    filename = filename[:-4] + '_valid.png'
+                elif imcategory == 'normal':
+                    filename = filename[:-4] + '_normal_camera.png'
+
                 print("original     :   {}".format(imdir))
-                print("destination  :   {}\n\n".format(join(os.getcwd(), imdestination, filename)))
+                print("destination  :   {}\n".format(join(os.getcwd(), imdestination, filename)))
 
                 cover = image.resize((256, 256), Image.NEAREST)
                 cover.save(join(os.getcwd(), imdestination, filename), image.format)
