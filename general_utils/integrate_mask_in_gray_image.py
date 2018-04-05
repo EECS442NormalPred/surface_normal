@@ -48,13 +48,13 @@ def main(sourceDir, destinationDir):
             merged_im = Image.merge('RGB', [c1, c2, c3])
 
             # Save images
-            colordest = join(os.getcwd(), 'temp', filename[:-4] + '_color.png')
+            colordest = join(destinationDir, filename[:-4] + '_color.png')
             merged_im.save(colordest, merged_im.format)
 
-            normdest = join(os.getcwd(), 'temp', filename[:-4] + '_normal_camera.png')
+            normdest = join(destinationDir, filename[:-4] + '_normal_camera.png')
             normIm.save(normdest, normIm.format)
 
-            maskdest = join(os.getcwd(), 'temp', filename[:-4] + '_valid.png')
+            maskdest = join(destinationDir, filename[:-4] + '_valid.png')
             maskIm.save(maskdest, maskIm.format)
 
 
@@ -65,7 +65,7 @@ if __name__ == '__main__':
     print("Processing images from directory: {}".format(sys.argv[1]))
     print("Destination directory:            {}".format(sys.argv[2]))
     print('\n')
-    
+
     # # Hardcoded directories for testing
     # source = "/home/baldeeb/Documents/EECS442/eecs442challenge/train"
     # destination = './temp/'
